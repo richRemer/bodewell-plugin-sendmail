@@ -1,0 +1,19 @@
+{
+  "name": "bodewell-plugin-sendmail",
+  "version": "0.0.1",
+  "description": "let bodewell system monitor send email notifications using sendmail",
+  "main": "sendmail.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/richRemer/bodewell-plugin-sendmail.git"
+  },
+  "author": "Richard Remer <reanjr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richRemer/bodewell-plugin-sendmail/issues"
+  },
+  "homepage": "https://github.com/richRemer/bodewell-plugin-sendmail#readme"
+}
