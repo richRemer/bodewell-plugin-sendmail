@@ -1,7 +1,7 @@
 var spawn = require("child_process").spawn;
 
 module.exports = function(server) {
-    server.sender("sendmail", (contact, message) => {
+    server.dispatcher("sendmail", (contact, message) => {
         var sendmail,
             result,
             email;
