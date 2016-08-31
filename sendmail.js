@@ -1,20 +1,20 @@
 var spawn = require("child_process").spawn;
 
 module.exports = function(server) {
-    server.sender(true, "sendmail", (contacts, message) => {
+    server.sender("sendmail", (contact, message) => {
         var sendmail,
             result,
-            to = contacts.map(c => c.email).filter(e => e).join(","),
             email;
 
-        email = `Subject:${message.title}\nTo:${to}\n\n${message.body}`;
+        email = `Subject:${message.title}\n`;
+        email += `To:${contact.email}\n\n${message.body}`;
 
-        sendmail = spawn("sendmail", [to]);
+        sendmail = spawn("sendmail", [contact.email]);
         sendmail.stdout.on("data", (data) => result += String(data));
         sendmail.on("error", (err) => server.error(err));
         sendmail.on("close", code => {
             if (code === 0) {
-                server.log("sendmail:sent to", to);
+                server.log("sendmail:sent to", contact.email);
             } else {
                 server.error("sendmail:failed");
                 server.error(result);
