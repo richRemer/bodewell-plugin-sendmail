@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "let bodewell system monitor send email notifications using sendmail",
   "main": "sendmail.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/richRemer/bodewell-plugin-sendmail.git"
