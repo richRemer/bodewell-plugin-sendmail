@@ -11,6 +11,7 @@ module.exports = function(server) {
 
         sendmail = spawn("sendmail", [contact.email]);
         sendmail.stdout.on("data", (data) => result += String(data));
+        sendmail.stderr.on("data", (data) => result += String(data));
         sendmail.on("error", (err) => server.error(err));
         sendmail.on("close", code => {
             if (code === 0) {
