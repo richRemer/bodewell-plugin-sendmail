@@ -1,6 +1,6 @@
 {
   "name": "bodewell-plugin-sendmail",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "let bodewell system monitor send email notifications using sendmail",
   "main": "sendmail.js",
   "scripts": {
